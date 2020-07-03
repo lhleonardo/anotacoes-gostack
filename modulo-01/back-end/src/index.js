@@ -2,10 +2,14 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
 
+const cors = require("cors");
+
 const { uuid } = require("uuidv4");
 
 app.use(express.json());
 app.use(bodyParser());
+
+app.use(cors());
 
 const tasks = [];
 
@@ -55,4 +59,4 @@ app.delete("/tasks/:id", (request, response) => {
   return response.status(200);
 });
 
-app.listen(3000, () => console.log("Servidor Iniciado!"));
+app.listen(3333, () => console.log("Servidor Iniciado na porta 3333!"));

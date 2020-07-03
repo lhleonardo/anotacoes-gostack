@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  outline: 0;
+
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fafafa;
+}
+
+section.tasks {
+  padding: 30px;
+}
+
+section.tasks h3 {
+  margin-top: 30px;
+
+  text-align: center;
+}
+
+ul.values {
+  padding: 30px;
+}
+
+div.form form {
+  display: flex;
+  flex-direction: column;
+
+  padding: 10px;
+}
+
+div.form {
+  background: #7159c1;
+  border-radius: 10px;
+
+  width: 300px;
+}
+
+div.form label {
+  color: #fafafa;
+  padding: 5px;
+
+  font-size: 16px;
+  font-weight: bold;
+}
+
+div.form input[type="text"] {
+  padding: 10px 3px;
+  border-radius: 4px;
+  background: #fafafa;
+
+  border: none;
+
+  margin: 5px 0px;
+}
+
+div.form input[type="submit"] {
+  background: #3f4378;
+  color: #fff;
+  border: 0;
+
+  border-radius: 10px;
+
+  padding: 10px;
+}
+
+div.form input[type="submit"]:hover {
+  background: #1a1f5b;
+}
