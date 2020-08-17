@@ -1,5 +1,10 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { shade } from 'polished';
+import { Link } from 'react-router-dom';
+
+interface FormAttributes {
+  hasError: boolean;
+}
 
 export const Title = styled.h1`
   margin-top: 100px;
@@ -10,7 +15,7 @@ export const Title = styled.h1`
   color: #3a3a3a;
 `;
 
-export const Form = styled.form`
+export const Form = styled.form<FormAttributes>`
   margin-top: 40px;
 
   display: flex;
@@ -26,6 +31,15 @@ export const Form = styled.form`
     background-color: white;
 
     border-radius: 5px 0px 0px 5px;
+
+    border: 2px solid #fff;
+
+    ${props =>
+    props.hasError &&
+    css`
+        border-color: #e64622;
+        border-right: none;
+      `}
 
     &::placeholder {
       color: #999;
@@ -49,14 +63,20 @@ export const Form = styled.form`
   }
 `;
 
-export const Repositories = styled.div`
-  margin-top: 80px;
+export const Error = styled.span`
+  display: block;
+  margin-top: 15px;
 
-  width: 100%;
-  height: 300px;
+  color: #e64622;
+  font-weight: bold;
 `;
 
-export const Repository = styled.a`
+export const Repositories = styled.div`
+  margin-top: 80px;
+  width: 100%;
+`;
+
+export const Repository = styled(Link)`
   display: flex;
 
   background-color: white;
